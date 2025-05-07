@@ -120,3 +120,112 @@
         margin: 10px 0;
       }
       .services-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-item {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      form {
+        width: 90%;
+        margin-top: 20px;
+      }
+      .contact-options {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-options a img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="home">
+    <img src="logo.png" class="logo" alt="GlobalPhase Logo" />
+    <h1>Welcome to GlobalPhase</h1>
+    <p>Your partner in international trade solutions</p>
+    <a href="#services" style="background:#ff7f50;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">Explore Our Services</a>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home" aria-label="Home">Home</a></li>
+      <li><a href="#services" aria-label="Services">Services</a></li>
+      <li><a href="#about" aria-label="About">About</a></li>
+      <li><a href="#contact" aria-label="Contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>International Trade Consulting</h3>
+        <p>Expert advice on global commerce.</p>
+      </div>
+      <div class="service-item">
+        <h3>Import & Export Management</h3>
+        <p>Efficient strategies for import/export.</p>
+      </div>
+      <div class="service-item">
+        <h3>Vendor & Buyer Sourcing</h3>
+        <p>Connecting with the right global partners.</p>
+      </div>
+      <div class="service-item">
+        <h3>Product Category Research</h3>
+        <p>Insights into category trends and demand.</p>
+      </div>
+      <div class="service-item">
+        <h3>Customs & Regulation Assistance</h3>
+        <p>Help with international trade laws.</p>
+      </div>
+      <div class="service-item">
+        <h3>Logistics & Shipment Tracking</h3>
+        <p>Reliable tracking and delivery management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      GlobalPhase is your trusted partner in global trade, delivering smart, online-first solutions for international business.
+      From vendor sourcing to shipment tracking, we help you grow across borders—efficiently and reliably.
+    </p>
+    <p>
+      GlobalPhase was founded with a simple mission — to make global trade easier, smarter, and fully digital. We provide comprehensive import and export solutions to businesses around the world, no matter their size.
+      Our company operates entirely online, allowing us to offer fast, flexible, and cost-effective support. We believe in transparency, expertise, and personalized service.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-options">
+      <a href="https://wa.me/917867963483" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </a>
+      <a href="mailto:globalphaseint@gmail.com" aria-label="Email">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+      </a>
+      <a href="https://www.facebook.com/share/19EQixWKqa/" target="_blank" aria-label="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+      </a>
+    </div>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="4" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GlobalPhase. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
