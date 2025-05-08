@@ -215,12 +215,54 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
       </a>
     </div>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="4" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+</head>
+<body>
+
+  <!-- Your Contact Form -->
+  <form id="your-form-id">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Your JavaScript code for sending email -->
+  <script>
+    // Initialize EmailJS with your User ID
+    emailjs.init("pQuGCQxdK9Vg6HacP");
+
+    // Function to send the email
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      const form = document.getElementById('your-form-id'); // The ID of your form
+
+      // Send data to EmailJS using your Service ID and Template ID
+      emailjs.sendForm("global_001", "template_tko8t29", form)
+        .then(function(response) {
+          console.log("Success:", response);
+          alert("Email sent successfully!");
+        }, function(error) {
+          console.log("Error:", error);
+          alert("Failed to send email.");
+        });
+    }
+
+    // Bind the sendEmail function to form submission
+    document.getElementById('your-form-id').addEventListener('submit', sendEmail);
+  </script>
+
+</body>
+</html>
   </section>
 
   <footer>
