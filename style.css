@@ -127,6 +127,9 @@ form button:hover {
     font-size: 3em;
     margin-bottom: 10px;
 }
+.contact-section {
+    height: 100vh; /* too tall, especially on mobile */
+}
 
 .hero-content p {
     font-size: 1.5em;
