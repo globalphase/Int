@@ -39,6 +39,16 @@ nav ul li a {
     background-color: #0073e6;
     color: white;
 }
+.hero-section {
+  height: 60vh; 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 section {
     padding: 20px;
