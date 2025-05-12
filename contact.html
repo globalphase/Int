@@ -1,0 +1,97 @@
+
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="GlobalPhase International - Contact Us for Import Export Solutions.">
+  <title>Contact Us - GlobalPhase International</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add this in the <head> section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+  <!-- Include Header -->
+  
+          <header>
+  
+  <nav>
+    <div style="width:50px;" class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul id="navMenu">
+      <li><a href="home.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Connect Us</h1>
+      <p>Your partner in global trade.</p>
+      
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact">
+    <h1>Contact Us</h1>
+   <!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("b8q7ukzmYa_4acFMq"); // Replace with your Public Key
+  })();
+</script>
+
+<div class="form-container">
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("globalphase", "template_9kuvm1d", this)
+      .then(function() {
+        alert("Message sent successfully!");
+      }, function(error) {
+        alert("Failed to send message: " + error.text);
+      });
+  });
+</script>
+<br>
+    <a href="https://wa.me/917867963483"><img style="width:50px;" src="whatsapp-icon.png"></a>
+        <a href="https://www.instagram.com/globalphase_intl?igsh=MzY3MTM1ZHFwbnl5"><img style="width:50px;" src="instagram-logo.png"></a>
+         <a href="https://www.facebook.com/share/15GFYWnkkj/"><img style="width:50px;" src="facebook-logo.png"></a>
+    
+    
+    
+                  
+  </section><hr>
+  <p style="padding:30px;">Thank you for your interest in GlobalPhase International. We are always here to support your needs, answer your questions, and explore new opportunities with clients, partners, and investors from across the globe. Whether you're looking to inquire about our wide range of products, discuss import/export possibilities, or collaborate on new ventures, our dedicated team is ready to assist you with prompt and professional service. We understand the value of timely communication in global trade, which is why we ensure that every message, inquiry, or feedback you send us is handled with utmost care and priority. From initial discussions to long-term partnerships, we are committed to transparency, efficiency, and excellence in everything we do. You can contact us anytime through our official WhatsApp number or email address, and we will respond as quickly as possible. Our team is experienced, multilingual, and available to provide you with detailed information about our products, services, and business processes. Whether you're a supplier, buyer, logistics partner, or just someone curious to learn more about our offerings, we encourage you to reach out. We also welcome feedback that can help us improve and grow. At GlobalPhase International, building lasting relationships is at the heart of our mission, and every inquiry is a step toward a potential collaboration. Thank you once again for visiting our website, and we look forward to connecting with you soon.
+</p><hr>
+  <section style="padding:30px;" class="contact-section">
+  <h2>Let’s Start a Conversation</h2>
+  <p>Whether it’s a question, a quote, or a new idea — we’re here to listen.</p>
+  <a href="mailto:globalphaseint@gmail.com" class="email-button">Email Us</a>
+</section>
+
+  <!-- Include Footer -->
+<footer style="padding:20px;">
+  <p>&copy; 2025 GlobalPhase International. All rights reserved.</p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
