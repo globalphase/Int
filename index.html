@@ -11,77 +11,133 @@
       box-sizing: border-box;
     }
 
-    body {
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1520975698519-59d2b1b3f3ff') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      color: #fff;
-      position: relative;
+      overflow: hidden;
     }
 
-    .spotlight {
+    #particles-js {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
-      z-index: 999;
-      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 120px, rgba(0, 0, 0, 0.9) 300px);
-      mix-blend-mode: multiply;
+      background: #0f2027;
+      z-index: -1;
     }
 
     .content {
       position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 40px 30px;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      color: #222;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 20px;
+      color: white;
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 42px;
       margin-bottom: 20px;
-      color: #2c3e50;
+      animation: fadeInDown 1s ease;
     }
 
     p {
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 20px;
+      font-size: 20px;
+      max-width: 700px;
+      line-height: 1.6;
+      animation: fadeInUp 1s ease;
     }
 
-    @media screen and (max-width: 768px) {
-      .content {
-        margin: 80px 20px;
-        padding: 30px 20px;
-      }
+    .contact-btns {
+      margin-top: 30px;
+    }
+
+    .contact-btns a {
+      margin: 0 15px;
+      padding: 15px 25px;
+      background-color: #0072ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .contact-btns a:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+    }
+
+    footer a {
+      color: #0072ff;
+      text-decoration: none;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="spotlight" id="spotlight"></div>
-
+  <div id="particles-js"></div>
   <div class="content">
     <h1>GlobalPhase International</h1>
-    <p>We’re currently working behind the scenes to build a better version of our business. Our goal is to come back with a stronger, smarter, and more effective model that creates real impact in the world.</p>
-    <p>In the meantime, we’re taking this pause seriously — learning, improving, and preparing. GlobalPhase International is not gone — just recharging with a clearer vision and a more powerful purpose.</p>
-    <p>Thank you for visiting and for your support. Stay connected. We’ll be back soon.</p>
-    <p>– Team GlobalPhase</p>
-  </div>
+    <p>Welcome to GlobalPhase International. We are shaping the digital future with bold ideas, smart solutions, and global connections. Stay tuned — something amazing is coming soon!</p>
 
+    <div class="contact-btns">
+      
+      <a href="https://wa.me/+917867963483" target="_blank">WhatsApp</a>
+    </div><br>
+
+  <footer>
+    <p style="background-color:black;">© 2025 GlobalPhase International  </p>
+  </footer>
+
+  <!-- Load particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    const spotlight = document.getElementById("spotlight");
-
-    document.addEventListener("mousemove", (e) => {
-      spotlight.style.setProperty('--x', `${e.clientX}px`);
-      spotlight.style.setProperty('--y', `${e.clientY}px`);
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": {
+          "enable": true, "speed": 4, "direction": "none",
+          "random": false, "straight": false, "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
     });
   </script>
 </body>
