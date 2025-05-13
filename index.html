@@ -1,73 +1,88 @@
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <meta name="description" content="GlobalPhase International - Import Export Agent for Global Trade.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GlobalPhase International</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1520975698519-59d2b1b3f3ff') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      color: #fff;
+      position: relative;
+    }
+
+    .spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 120px, rgba(0, 0, 0, 0.9) 300px);
+      mix-blend-mode: multiply;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 40px 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      color: #222;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .content {
+        margin: 80px 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Include Header -->
-  
-          <header>
-  
-  <nav>
-    <div style="width:50px;" class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-    <ul id="navMenu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="about.html" class="nav-link">About Us</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-      <li><a href="blog.html" class="nav-link">Blog</a></li>
-    </ul>
-  </nav>
-</header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div style="padding:10px;" class="hero-content">
-      <h1>Welcome to GlobalPhase International</h1>
-      <p>Your trusted partner in global trade and logistics</p>
-    </div>
-  </section>
+  <div class="spotlight" id="spotlight"></div>
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>At GlobalPhase International, we specialize in streamlining the import-export process to make your business thrive globally.</p><br>
-    <img style="width:300px;" src="logistics.jpg"><br>
-    <a href="about.html" class="btn">Learn More</a><br><hr>
-    <h1>Who We Are</h1><br>
-    <p>GlobalPhase International was founded with a mission to bridge the gap between suppliers and buyers across the globe. In today’s fast-paced and interconnected world, businesses require reliable, transparent, and efficient trade facilitation services that allow them to grow beyond borders. Recognizing this need, we established ourselves as an online-first import-export agency to provide unmatched agility and personalized support. Without the overhead of a physical office, we operate with lower costs, faster communication, and a global reach that allows us to serve clients of all sizes. Our goal is to simplify international trade, provide deep market insights, and ensure every transaction is smooth, secure, and successful. Whether you are a small startup or a large enterprise, we are here to help you unlock global opportunities and scale with confidence.</p><br><hr>
-    <h1>Our Values</h1><br>
-    <h4>Integrity:</h4><ul style="list-style-type:none; padding:0;"><li>
-    <p> We believe in doing business with honesty and transparency.</p></li></ul><br>
-    <h4>Customer-Centric:</h4><ul style="list-style-type:none; padding:0;"><li>
- Our clients are at the heart of everything we do. We go the extra mile to meet their needs.</li></ul><br>
- <h4>Innovation:</h4><ul style="list-style-type:none; padding:0;"><li>
- We continuously adapt and innovate to stay ahead in the ever-changing global trade landscape.</li></ul><br>
- <h4>Excellence:</h4><ul style="list-style-type:none; padding:0;"><li>
- We hold ourselves to the highest standards to deliver top-notch service.</p></li></ul>
-    
-  </section><hr>
-  <p style="padding:50px;">GlobalPhase International is more than just an import-export service — we're your gateway to the world. Whether you're a startup exploring overseas markets or an established brand expanding your global reach, we provide the tools, connections, and support to help you grow beyond borders.</p><hr>
-  
-  
+  <div class="content">
+    <h1>GlobalPhase International</h1>
+    <p>We’re currently working behind the scenes to build a better version of our business. Our goal is to come back with a stronger, smarter, and more effective model that creates real impact in the world.</p>
+    <p>In the meantime, we’re taking this pause seriously — learning, improving, and preparing. GlobalPhase International is not gone — just recharging with a clearer vision and a more powerful purpose.</p>
+    <p>Thank you for visiting and for your support. Stay connected. We’ll be back soon.</p>
+    <p>– Team GlobalPhase</p>
+  </div>
 
-  <!-- Call to Action -->
-  <section style="padding:30px;" class="cta">
-    <h2>Have Questions About Global Trade?</h2>
-    <p>Explore our blog or reach out to us for personalized help.</p>
-    <a href="contact.html" class="btn">Contact Us</a>
-  </section>
+  <script>
+    const spotlight = document.getElementById("spotlight");
 
-  <!-- Include Footer -->
-  <footer style="padding:20px;">
-  <p>&copy; 2025 GlobalPhase International. All rights reserved.</p>
-</footer>
-
-  <script src="script.js"></script>
+    document.addEventListener("mousemove", (e) => {
+      spotlight.style.setProperty('--x', `${e.clientX}px`);
+      spotlight.style.setProperty('--y', `${e.clientY}px`);
+    });
+  </script>
 </body>
 </html>
