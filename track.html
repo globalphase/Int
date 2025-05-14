@@ -3,20 +3,51 @@
 <head>
   <title>Track Order - Productivity Kit Hub</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .track-box {
+      max-width: 400px;
+      margin: 30px auto;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
   <div style="background:#222; padding:10px;">
-  <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-  <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
-  <a href="login.html" style="color:white; margin-right:15px;">Login</a>
-  <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
-  <a href="track.html" style="color:white; margin-right:15px;">Track Order</a>
+    <a href="index.html" style="color:white; margin-right:15px;">Home</a>
+    <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
+    <a href="products.html" style="color:white; margin-right:15px;">Products</a>
+    <a href="cart.html" style="color:white; margin-right:15px;">Cart</a>
+    <a href="checkout.html" style="color:white; margin-right:15px;">Checkout</a>
+    <a href="track.html" style="color:white; margin-right:15px;">Track Order</a>
+    <a href="login.html" style="color:white; margin-right:15px;">Login</a>
+    <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
   </div>
-  <h2>Track Your Order</h2>
-  <form>
-    <label>Order ID:</label><br>
-    <input type="text" placeholder="Enter your Order ID"><br><br>
-    <button type="submit">Track Order</button>
-  </form>
+
+  <div class="track-box">
+    <h2>Track Your Order</h2>
+    <input type="text" placeholder="Enter Order ID" id="orderId">
+    <button onclick="trackOrder()">Track</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function trackOrder() {
+      const orderId = document.getElementById("orderId").value;
+      const result = document.getElementById("result");
+
+      if (orderId.trim() === "") {
+        result.innerText = "Please enter a valid Order ID.";
+      } else {
+        result.innerText = "Order ID: " + orderId + "\nStatus: In Transit\nExpected Delivery: 2-4 days";
+      }
+    }
+  </script>
 </body>
 </html>
