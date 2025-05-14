@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart - Productivity Kit Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="background:#222; padding:10px;">
+    <a href="index.html" style="color:white; margin-right:15px;">Home</a>
+    <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
+    <a href="products.html" style="color:white; margin-right:15px;">Products</a>
+    <a href="cart.html" style="color:white; margin-right:15px;">Cart</a>
+    <a href="login.html" style="color:white; margin-right:15px;">Login</a>
+    <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
+    <a href="track.html" style="color:white; margin-right:15px;">Track Order</a>
+  </div>
+
+  <h2>Your Cart</h2>
+  <ul id="cart-list"></ul>
+  <h3 id="total"></h3>
+
+  <script>
+    const cartList = document.getElementById('cart-list');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.name + ' - $' + item.price;
+      cartList.appendChild(li);
+      total += item.price;
+    });
+
+    document.getElementById('total').textContent = 'Total: $' + total.toFixed(2);
+  </script>
+</body>
+</html>
