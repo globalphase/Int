@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel - Upload Product</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .upload-box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    #output {
+      background: #e6e6e6;
+      padding: 10px;
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-box">
+    <h2>Admin - Upload Product</h2>
+    <input type="text" id="name" placeholder="Product Name">
+    <textarea id="desc" placeholder="Product Description"></textarea>
+    <input type="text" id="price" placeholder="Price ($)">
+    <input type="text" id="image" placeholder="Image URL">
+    <button onclick="generateCard()">Generate Product Card</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function generateCard() {
+      const name = document.getElementById("name").value;
+      const desc = document.getElementById("desc").value;
+      const price = document.getElementById("price").value;
+      const image = document.getElementById("image").value;
+
+      const html = `
+<div class="product-card">
+  <img src="${image}" alt="${name}">
+  <h3>${name}</h3>
+  <p>${desc}</p>
+  <span>$${price}</span>
+  <button>Add to Cart</button>
+</div>`;
+
+      document.getElementById("output").innerText = html;
+    }
+  </script>
+</body>
+</html>
