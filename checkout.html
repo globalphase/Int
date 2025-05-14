@@ -1,59 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Checkout - Productivity Kit Hub</title>
+  <title>Checkout</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    form {
-      max-width: 400px;
-      margin: 20px auto;
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    input, textarea {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-    }
-    button {
-      padding: 10px;
-      background: green;
-      color: white;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-  </style>
 </head>
 <body>
-  <div style="background:#222; padding:10px;">
-    <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-    <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
-    <a href="products.html" style="color:white; margin-right:15px;">Products</a>
-    <a href="cart.html" style="color:white; margin-right:15px;">Cart</a>
-    <a href="checkout.html" style="color:white; margin-right:15px;">Checkout</a>
-    <a href="login.html" style="color:white; margin-right:15px;">Login</a>
-    <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
-  </div>
+  <h1>Checkout</h1>
+  <form id="order-form">
+    <label>Name:</label><br>
+    <input type="text" required><br><br>
 
-  <h2 style="text-align:center;">Checkout</h2>
-  <form id="checkout-form">
-    <input type="text" placeholder="Full Name" required>
-    <input type="text" placeholder="Shipping Address" required>
-    <input type="text" placeholder="City" required>
-    <input type="text" placeholder="Pincode" required>
-    <textarea placeholder="Additional Notes"></textarea>
+    <label>Address:</label><br>
+    <textarea required></textarea><br><br>
+
+    <label>Phone Number:</label><br>
+    <input type="tel" required><br><br>
+
     <button type="submit">Place Order</button>
   </form>
 
   <script>
-    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    document.getElementById("order-form").onsubmit = function(e) {
       e.preventDefault();
-      localStorage.removeItem('cart');
-      alert('Order placed successfully! Thank you for shopping with us.');
-      window.location.href = 'index.html';
-    });
+      localStorage.removeItem("cart");
+      alert("Order placed successfully! Thank you.");
+      window.location.href = "index.html"; // redirect after placing order
+    };
   </script>
 </body>
 </html>
