@@ -50,5 +50,25 @@
     }
   }).render('#paypal-button-container');
       </script>
+  <script>
+  function saveOrderDetails() {
+    let orderDetails = {
+      orderId: Math.floor(Math.random() * 1000000), // Random order number
+      name: document.getElementById('name').value,  // Assuming you collect name in the checkout form
+      email: document.getElementById('email').value  // Assuming you collect email
+    };
+    
+    // Save order details in local storage
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+  }
+
+  // Save order when user clicks "Place Order"
+  document.getElementById("checkout-form").onsubmit = function(e) {
+    e.preventDefault();
+    saveOrderDetails();
+    alert("Order has been saved! You can track it in your account.");
+    // Redirect to PayPal for payment
+  };
+  </script>
 </body>
 </html>
