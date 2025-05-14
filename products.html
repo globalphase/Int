@@ -66,5 +66,25 @@
       alert(name + " added to cart!");
     }
   </script>
+  <script>
+  // Function to add product to cart
+  function addToCart(name, price, image) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({ name, price, image });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+  }
+
+  // Hook all buttons
+  document.querySelectorAll(".product-card").forEach(card => {
+    const name = card.querySelector("h3").innerText;
+    const price = card.querySelector("span").innerText.replace("$", "");
+    const image = card.querySelector("img").src;
+    const button = card.querySelector("button");
+
+    button.onclick = () => addToCart(name, price, image);
+  });
+  </script>
 </body>
 </html>
