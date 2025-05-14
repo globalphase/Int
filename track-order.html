@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Your Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Track Your Order</h1>
+  <form id="track-order-form">
+    <label for="order-id">Enter Order ID:</label>
+    <input type="text" id="order-id" required><br><br>
+
+    <button type="submit">Track Order</button>
+  </form>
+
+  <div id="order-status"></div>
+
+  <script>
+    document.getElementById("track-order-form").onsubmit = function(e) {
+      e.preventDefault();
+      
+      let orderId = document.getElementById("order-id").value;
+      let savedOrderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+
+      if(savedOrderDetails && savedOrderDetails.orderId == orderId) {
+        document.getElementById("order-status").innerHTML = `
+          <p>Order ID: ${savedOrderDetails.orderId}</p>
+          <p>Name: ${savedOrderDetails.name}</p>
+          <p>Email: ${savedOrderDetails.email}</p>
+          <p>Status: Your order is being processed.</p>
+        `;
+      } else {
+        document.getElementById("order-status").innerHTML = `<p>No order found with that ID.</p>`;
+      }
+    };
+  </script>
+</body>
+</html>
