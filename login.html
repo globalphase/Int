@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login - Productivity Kit Hub</title>
+  <title>Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div style="background:#222; padding:10px;">
-  <a href="index.html" style="color:white; margin-right:15px;">Home</a>
-  <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
-  <a href="login.html" style="color:white; margin-right:15px;">Login</a>
-  <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
-  <a href="track.html" style="color:white; margin-right:15px;">Track Order</a>
-  </div>
-  <h2>Login</h2>
-  <form>
+  <h1>Login</h1>
+  <form id="login-form">
     <label>Email:</label><br>
-    <input type="email"><br><br>
+    <input type="email" required><br><br>
+
     <label>Password:</label><br>
-    <input type="password"><br><br>
+    <input type="password" required><br><br>
+
     <button type="submit">Login</button>
   </form>
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+  <script>
+    document.getElementById("login-form").onsubmit = function(e) {
+      e.preventDefault();
+      alert("Login successful!");  // You can add real login logic later.
+    };
+  </script>
 </body>
 </html>
