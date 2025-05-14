@@ -30,6 +30,7 @@
     <a href="index.html" style="color:white; margin-right:15px;">Home</a>
     <a href="categories.html" style="color:white; margin-right:15px;">Categories</a>
     <a href="products.html" style="color:white; margin-right:15px;">Products</a>
+    <a href="cart.html" style="color:white; margin-right:15px;">Cart</a>
     <a href="login.html" style="color:white; margin-right:15px;">Login</a>
     <a href="signup.html" style="color:white; margin-right:15px;">Sign Up</a>
     <a href="track.html" style="color:white; margin-right:15px;">Track Order</a>
@@ -41,20 +42,29 @@
       <img src="https://via.placeholder.com/150" alt="Product 1">
       <h4>Product 1</h4>
       <p>$19.99</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
     </div>
     <div class="product-card">
       <img src="https://via.placeholder.com/150" alt="Product 2">
       <h4>Product 2</h4>
       <p>$29.99</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
     </div>
     <div class="product-card">
       <img src="https://via.placeholder.com/150" alt="Product 3">
       <h4>Product 3</h4>
       <p>$39.99</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Product 3', 39.99)">Add to Cart</button>
     </div>
   </div>
+
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(name + " added to cart!");
+    }
+  </script>
 </body>
 </html>
